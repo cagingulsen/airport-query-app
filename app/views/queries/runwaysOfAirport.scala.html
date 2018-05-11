@@ -1,0 +1,63 @@
+@(currentPage: io.ebean.PagedList[Runway], currentSortBy: String, currentOrder: String)
+
+@**********************************
+* Helper generating table headers *
+***********************************@
+@header(key:String, title:String) = {
+    <th class="@key.replace(".","_")">
+    </th>
+}
+
+@main {
+
+
+    <h1 id="homeTitle">@Messages("queries.runwaysOfAirport.title", currentPage.getTotalCount)</h1>
+
+
+    @if(flash.containsKey("success")) {
+        <div class="alert-message warning">
+            <strong>Done!</strong> @flash.get("success")
+        </div>
+    }
+
+    @if(currentPage.getTotalCount == 0) {
+
+        <div class="well">
+            <em>No runways exist for this airport.</em>
+        </div>
+
+    } else {
+
+        <table class="runways">
+            <thead>
+                <tr>
+                    <th>Runway Id</th>
+                    <th>Runway Surface</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @for(runway <- currentPage.getList.asScala) {
+                <tr>
+                    <td>
+                        @if(runway.id == null) {
+                        <em>-</em>
+                        } else {
+                            @runway.id
+                        }
+                    </td>
+                    <td>
+                        @if(runway.surface == null) {
+                        <em>-</em>
+                        } else {
+                            @runway.surface
+                        }
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    <a href="@routes.QueryController.airports()" class="btn">Go back</a>
+}

@@ -1,0 +1,7 @@
+@(message: String)
+
+@main{
+    <a href="@routes.ReportController.topBottomCountries()" class="btn">Countries with highest & lowest number of airports</a>
+    <a href="@routes.ReportController.runwayTypesPerCountry()" class="btn">Type of runways per country</a>
+    <a href="@routes.ReportController.mostComRunwayIdent()" class="btn">Most common runway identifications</a>
+}

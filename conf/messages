@@ -1,0 +1,12 @@
+# Messages
+
+queries.airports.title={0,choice,0#No airports|1#1 airport|1<{0,number,integer} airports} found
+
+queries.runwaysOfAirport.title={0,choice,0#No runways|1#1 runway|1<{0,number,integer} runways} found
+
+reports.topBottomCountries.topCountries.title=10 countries with the highest number of airports
+reports.topBottomCountries.bottomCountries.title=10 countries with the lowest number of airports
+
+reports.mostComRunwayIdent.title=The top 10 most common runway identifications
+
+reports.runwayTypesPerCountry.title=Type of runways per country

@@ -1,0 +1,115 @@
+html {
+    background: #eee;
+}
+
+header h1 {
+    padding: 0.4em 1.1em;
+    color: white;
+    font-weight: normal;
+    font-size: 24px;
+}
+
+section#main {
+    position: relative;
+    padding: 5em 2em;
+    min-height: 20px;
+}
+
+section#main .topRight {
+    position: absolute;
+    right: 20px;
+    top: 70px;
+}
+
+table.airports em {
+    color: #aaa;
+}
+
+table.airports .name {
+    width: 40%;
+    min-width: 400px;
+}
+
+table.airports .atype {
+    width: 20%;
+    min-width: 200px;
+}
+
+table.airports .countryCode {
+    width: 15%;
+    min-width: 150px;
+}
+
+table.airports .cname {
+    width: 25%;
+    min-width: 250px;
+}
+
+.airport_count{
+    width:50%;
+}
+.country_name{
+    width:50%;
+}
+
+table.runways .header a {
+}
+
+table.runways em {
+    color: #aaa;
+}
+
+table.runways .id {
+    width: 20%;
+    min-width: 200px;
+}
+
+table.runways .surface {
+    width: 80%;
+    min-width: 200px;
+}
+
+table.runways .header a {
+}
+
+table.countries em {
+    color: #aaa;
+}
+
+table.countries .country_name {
+    width: 40%;
+    min-width: 400px;
+}
+
+table.countries .airport_count {
+    width: 60%;
+    min-width: 200px;
+}
+
+table.countries .header a {
+}
+
+#actions {
+    position: relative;
+}
+
+#actions #add {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#pagination {
+    position: relative;
+}
+
+#pagination ul {
+    position: absolute;
+    right: 0;
+}
+
+#pagination ul .current a {
+    color: #666;
+}
+
+

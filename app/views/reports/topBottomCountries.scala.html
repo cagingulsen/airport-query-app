@@ -1,0 +1,73 @@
+@(topBottomCountries: Map[String, Integer], bottomCountries: Map[String, Integer])
+
+@main {
+
+
+    <h1 id="homeTitle">@Messages("reports.topBottomCountries.topCountries.title")</h1>
+
+    @if(flash.containsKey("success")) {
+    <div class="alert-message warning">
+        <strong>Done!</strong> @flash.get("success")
+    </div>
+    }
+
+    <table class="countries">
+
+        <tr>
+            <th>Country Name</th>
+            <th>Airport Count</th>
+        </tr>
+        @for((key, value) <- topBottomCountries) {
+            <tr>
+                <td class="country_name">
+                    @if(key == null) {
+                    <em>-</em>
+                    } else {
+                        @key
+                    }
+                </td>
+                <td class="airport_count">
+                    @if(value == null) {
+                    <em>-</em>
+                    } else {
+                        @value
+                    }
+                </td>
+            </tr>
+        }
+
+        </tbody>
+    </table>
+
+    <h1 id="homeTitle">@Messages("reports.topBottomCountries.bottomCountries.title")</h1>
+
+    <table class="countries">
+
+        <tr>
+            <th>Country Name</th>
+            <th>Airport Count</th>
+        </tr>
+        @for((key, value) <- bottomCountries) {
+        <tr>
+            <td class="country_name">
+                @if(key == null) {
+                <em>-</em>
+                } else {
+                    @key
+                }
+            </td>
+            <td class="airport_count">
+                @if(value == null) {
+                <em>-</em>
+                } else {
+                    @value
+                }
+            </td>
+        </tr>
+        }
+
+        </tbody>
+    </table>
+
+    <a href="@routes.ReportController.reportsMain()" class="btn">Go back to Reports</a>
+}

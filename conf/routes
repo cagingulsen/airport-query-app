@@ -1,0 +1,22 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Default path will just redirect to the computer list
+GET     /                                   controllers.HomeController.index()
+
+# Airports list (look at the default values for pagination parameters)
+GET     /airports                           controllers.QueryController.airports(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "", u:Boolean ?= true)
+
+# Show runways of the airport
+GET     /airports/:id                       controllers.QueryController.runwaysOfAirport(id:Long, s ?= "id", o ?= "asc")
+
+# Reports
+GET     /reports                            controllers.ReportController.reportsMain()
+GET     /reports/topBottomCountries         controllers.ReportController.topBottomCountries()
+GET     /reports/runwayTypesPerCountry      controllers.ReportController.runwayTypesPerCountry()
+GET     /reports/mostComRunwayIdent         controllers.ReportController.mostComRunwayIdent()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                       controllers.Assets.at(path="/public", file)
+
